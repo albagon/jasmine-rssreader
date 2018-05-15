@@ -30,43 +30,50 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-         allFeeds.forEach(function(feed){
-             it('feed '+allFeeds.indexOf(feed)+' has a URL and it is not empty', function() {
-                 expect(feed.url).toBeDefined();
-                 expect(feed.url).not.toBeNull();
-             });
-         });
+        allFeeds.forEach(function(feed){
+            it('feed '+allFeeds.indexOf(feed)+' has a URL and it is not empty', function() {
+                expect(feed.url).toBeDefined();
+                expect(feed.url).not.toBeNull();
+            });
+        });
 
         /* This is a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-         allFeeds.forEach(function(feed){
-             it('feed '+allFeeds.indexOf(feed)+' has a name and it is not empty', function() {
-                 expect(feed.name).toBeDefined();
-                 expect(feed.name).not.toBeNull();
-             });
-         });
+        allFeeds.forEach(function(feed){
+            it('feed '+allFeeds.indexOf(feed)+' has a name and it is not empty', function() {
+                expect(feed.name).toBeDefined();
+                expect(feed.name).not.toBeNull();
+            });
+        });
     });
 
-
-    /* This is a new test suite named "The menu" */
+    // This is a new test suite for "The menu"
     describe('The menu', function() {
-      /* This test ensures the menu element is
-       * hidden by default.
-       */
-       it('is hidden by default', function() {
-           expect($('body').hasClass('menu-hidden')).toBe(true);
-       });
+        /* This test ensures the menu element is
+         * hidden by default.
+         */
+        it('is hidden by default', function() {
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
 
-       /* TODO: Write a test that ensures the menu changes
-        * visibility when the menu icon is clicked. This test
-        * should have two expectations: does the menu display when
-        * clicked and does it hide when clicked again.
-        */
+        /* This test ensures the menu changes
+         * visibility when the menu icon is clicked. This test
+         * should have two expectations: does the menu display when
+         * clicked and does it hide when clicked again.
+         */
+        it('should display/hidde when the menu icon is clicked', function() {
+            // Make sure the menu is hidden
+            $('body').class = 'menu-hidden';
+            // Trigger a click event
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).not.toBe(true);
+            // Trigger a second click event
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
     });
-
-
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
