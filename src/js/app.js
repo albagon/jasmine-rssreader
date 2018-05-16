@@ -1,3 +1,4 @@
+/* eslint-env jquery */
 /* app.js
  *
  * This is our RSS feed reader application. It uses the Google

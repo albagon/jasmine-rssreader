@@ -1,3 +1,6 @@
+/* eslint-env jasmine */
+/* global $, allFeeds, loadFeed */
+
 /* feedreader.js
  *
  * This is the spec file that Jasmine will read and contains
