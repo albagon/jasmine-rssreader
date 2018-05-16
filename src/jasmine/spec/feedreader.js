@@ -33,8 +33,8 @@ $(function() {
          * in the allFeeds object and ensures that it has a URL
          * defined and that the URL is not empty.
          */
-        allFeeds.forEach(function(feed){
-            it('feed '+allFeeds.indexOf(feed)+' has a URL and it is not empty', function() {
+        it('have a not empty URL', function() {
+            allFeeds.forEach(function(feed){
                 expect(feed.url).toBeDefined();
                 expect(feed.url).not.toBeNull();
             });
@@ -44,8 +44,8 @@ $(function() {
          * in the allFeeds object and ensures that it has a
          * name defined and that the name is not empty.
          */
-        allFeeds.forEach(function(feed){
-            it('feed '+allFeeds.indexOf(feed)+' has a name and it is not empty', function() {
+        it('have a not empty name', function() {
+            allFeeds.forEach(function(feed){
                 expect(feed.name).toBeDefined();
                 expect(feed.name).not.toBeNull();
             });
@@ -66,7 +66,7 @@ $(function() {
          * should have two expectations: does the menu display when
          * clicked and does it hide when clicked again.
          */
-        it('should display/hidde when the menu icon is clicked', function() {
+        it('should display/hide when the menu icon is clicked', function() {
             // Make sure the menu is hidden
             $('body').class = 'menu-hidden';
             // Trigger a click event
