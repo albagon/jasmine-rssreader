@@ -102,20 +102,27 @@ $(function() {
          * changes when a new feed is loaded by the loadFeed function.
          * Remember, loadFeed() is asynchronous.
          */
-        var initialFeed = $('.feed').html();
-        var newFeed;
+        var firstFeed;
+        var secondFeed;
 
-        beforeEach(function(done) {
-            /* The initial feed id is 0 so we will call loadFeed()
-             * with a different feed id, e.g. 1
-             */
-            loadFeed(1, done);
-            newFeed = $('.feed').html();
+        beforeEach(function(done){
+            loadFeed(0, function(){
+                // Inside callback function. It means feed 0 is done loading
+                // Store the feeds for future comparison
+                firstFeed = $('.feed').html();
+                // Load the feed again with a different id, e.g. 1
+                loadFeed(1, function(){
+                    // Inside callback function. It means feed 1 is done loading
+                    // Store the feeds for future comparison
+                    secondFeed = $('.feed').html();
+                    // all variables initialised, can begin tests
+                    done();
+                });
+            });
         });
 
-        it('is loaded by the loadFeed function', function(done) {
-            expect(initialFeed).not.toEqual(newFeed);
-            done();
+        it('is loaded by the loadFeed function', function() {
+            expect(firstFeed).not.toEqual(secondFeed);
         });
 
         afterEach(function(done) {
