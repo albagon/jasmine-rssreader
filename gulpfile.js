@@ -32,8 +32,8 @@ gulp.task('copy-html', function(done){
   done();
 });
 
-gulp.task('copy-readme', function(done){
-  gulp.src('src/README.md')
+gulp.task('copy-docs', function(done){
+  gulp.src('src/*.md')
       .pipe(gulp.dest('./dist'));
   done();
 });
@@ -74,15 +74,15 @@ gulp.task('scripts-dist', function(done){
   done();
 });
 
-gulp.task('dist', gulp.series('copy-html', 'copy-readme', 'copy-spec', 'styles', 'lint-tests', 'scripts-dist'));
+gulp.task('dist', gulp.series('copy-html', 'copy-docs', 'copy-spec', 'styles', 'lint-tests', 'scripts-dist'));
 
-gulp.task('default', gulp.series('copy-html', 'copy-readme', 'copy-spec', 'styles', 'lint-tests', function(done){
+gulp.task('default', gulp.series('copy-html', 'copy-docs', 'copy-spec', 'styles', 'lint-tests', function(done){
     // The way to abort a process in the console is Ctrl+C.
     // This is useful when you want to end the watching.
     gulp.watch('src/sass/**/*.scss', gulp.series('styles'));
     gulp.watch('src/jasmine/spec/*.js', gulp.series('copy-spec'));
     gulp.watch('src/index.html', gulp.series('copy-html'));
-    gulp.watch('src/README.md', gulp.series('copy-readme'));
+    gulp.watch('src/*.md', gulp.series('copy-docs'));
     gulp.watch('./dist/index.html').on('change', browserSync.reload);
     gulp.watch('./dist/jasmine/spec/*.js').on('change', browserSync.reload);
 
