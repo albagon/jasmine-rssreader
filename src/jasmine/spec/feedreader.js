@@ -91,7 +91,7 @@ $(function() {
         });
 
         it('are added to the .feed container by the loadFeed function', function(done) {
-            expect($('.feed').find('.entry').length).not.toBe(0);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
             done();
         });
     });
