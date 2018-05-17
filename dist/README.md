@@ -27,7 +27,7 @@ $ git clone https://github.com/albagon/jasmine-rssreader.git
 Open `/dist/index.html` in your browser to start the RSS Reader and run the tests. The test results will be at the bottom of the page, after the last RSS feed.
 
 ## Write new unit tests
-Raw code files before minification or concatenation are stored in the `src` directory while files ready for production are located in the `dist` directory. Any new unit tests should be written in `src/jasmine/spec/feedreader.js`.
+Raw code files before minification or concatenation are stored in the `src` directory while files ready for production are located in the `dist` directory. Any new unit tests should be written in `src/jasmine/spec/feedreader.js` file.
 
 Before you start coding awesome new unit tests, go to your terminal and start the build tools.
 
@@ -37,7 +37,7 @@ $ gulp
 
 This will launch the app and unit tests in your browser. But before that, the tool will copy files from the `src` directory to the `dist` directory and `watch` them so there's always an up-to-date version of them in the `dist` directory. The tool will also syncronize them with your browser. Making it very easy to see the changes you make in the unit tests.
 
-Build tools are defined in `gulpfile.js`.
+Build tools are defined in `gulpfile.js` file.
 
 Once you are happy with the results, stop the `watch` of files with `ctrl+C` in your terminal and get your files ready for distribution by running:
 
@@ -59,8 +59,8 @@ $ gulp dist
 
 This repository is the result of a project I worked on to finish a section of the Udacity curriculum for a Front-End Developer Nanodegree Program. Therefore, all contributions are welcome.
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+For details, check out [CONTRIBUTING](CONTRIBUTING.md).
 
 ## License
 
-Jasmine-rssreader is distributed under the [MIT license](LICENSE).
+Jasmine-rssreader is distributed under the [MIT license](LICENSE.md).
